@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rose Day for My Love</title>
+  <style>
+    /* General Styles */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #ff7eb3, #ff758c);
+      color: white;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+      line-height: 1.6;
+    }
+
+    img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 5px solid white;
+      margin-bottom: 20px;
+      object-fit: cover;
+    }
+
+    .button {
+      padding: 12px 24px;
+      font-size: 1rem;
+      background: white;
+      color: #ff7eb3;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+
+    .button:hover {
+      background: #ff758c;
+      color: white;
+      transform: scale(1.05);
+    }
+
+    /* Surprise Screen */
+    .surprise-screen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.5s ease, visibility 0.5s ease;
+    }
+
+    .surprise-screen.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .rose-bouquet {
+      width: 200px; /* Adjust size as needed */
+      height: auto;
+      animation: pop 1.5s ease-in-out;
+    }
+
+    @keyframes pop {
+      0% {
+        transform: scale(0);
+      }
+      50% {
+        transform: scale(1.2);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    /* Next Screen */
+    .next-screen {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    .next-screen h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+
+    .next-screen p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 2rem;
+      }
+
+      p {
+        font-size: 1rem;
+      }
+
+      img {
+        width: 120px;
+        height: 120px;
+      }
+
+      .button {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+      }
+
+      .next-screen h2 {
+        font-size: 1.8rem;
+      }
+
+      .next-screen p {
+        font-size: 1rem;
+      }
+
+      .rose-bouquet {
+        width: 150px; /* Smaller size for mobile */
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Main Screen -->
+  <div class="container">
+    <h1>Happy Rose Day Jaaan</h1>
+    <img src="https://raw.githubusercontent.com/Shetab101/Rose-pic/main/4E5DC7E8-3AF3-4CB7-BD1B-2273157A727D.jpeg" alt="Your Picture">
+    <p>Sorry I couldnt get you real roses but you will eventually get more in real life 💖</p>
+    <button class="button" onclick="showSurprise()">Click for a Surprise!</button>
+  </div>
+
+  <!-- Surprise Screen -->
+  <div class="surprise-screen">
+    <img class="rose-bouquet" src="https://asset.bloomnation.com/c_pad,d_vendor:global:catalog:product:image.png,f_auto,fl_preserve_transparency,q_auto/v1738402136/vendor/3752/catalog/product/2/0/20230211060622_file_63e7d91e91094_63e7d927e784b.jpg" alt="Rose Bouquet"> <!-- Replace with your image URL -->
+  </div>
+
+  <!-- Next Screen -->
+  <div class="next-screen">
+    <h2>You Deserve the World 🌹</h2>
+    <p>Thank you for being the most amazing person in my life. I love you jaaan🤍</p>
+  </div>
+
+  <script>
+    function showSurprise() {
+      const surpriseScreen = document.querySelector('.surprise-screen');
+      surpriseScreen.classList.add('active');
+
+      // Transition to next screen after 3 seconds
+      setTimeout(() => {
+        surpriseScreen.classList.remove('active');
+        document.querySelector('.container').style.display = 'none';
+        document.querySelector('.next-screen').style.display = 'flex';
+      }, 3000);
+    }
+  </script>
+</body>
+</html>
