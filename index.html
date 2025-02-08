@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Rose Day!</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffe0e0;
+            color: #ff4d4d;
+            text-align: center;
+            padding: 50px;
+        }
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 1.5em;
+            margin-bottom: 40px;
+        }
+        .image-container {
+            margin-bottom: 50px;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        .button {
+            background-color: #ff4d4d;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.5em;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .button:hover {
+            background-color: #e60000;
+        }
+        #surprise {
+            display: none;
+            margin-top: 30px;
+        }
+        .rose {
+            font-size: 2em;
+            color: #ff4d4d;
+            animation: grow 1s forwards;
+        }
+        @keyframes grow {
+            0% { transform: scale(0); }
+            100% { transform: scale(1); }
+        }
+        .surprise-screen {
+            display: none;
+            background-color: #fff0f0;
+            padding: 50px;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+        .next-screen {
+            display: none;
+            background-color: #ffb3b3;
+            padding: 30px;
+            margin-top: 30px;
+            font-size: 1.5em;
+        }
+    </style>
+</head>
+<body>
+    <h1>Happy Rose Day, My Love!</h1>
+    <p>I'm sorry I couldn't give you real roses today, but you'll eventually get more in real life. For now, here's a small token of my love for you.</p>
+    
+    <div class="image-container">
+        <img src="https://github.com/Shetab101/Rose-pic/blob/main/4E5DC7E8-3AF3-4CB7-BD1B-2273157A727D.jpeg?raw=true" alt="Rose Image">
+    </div>
+    
+    <button class="button" onclick="showSurprise()">Click for a surprise!</button>
+
+    <div id="surprise">
+        <p>Roses made with code, just for you! 🌹</p>
+        <div class="rose">🌹</div>
+        <div class="rose">🌹</div>
+        <div class="rose">🌹</div>
+        <div class="rose">🌹</div>
+        <div class="rose">🌹</div>
+    </div>
+
+    <div class="surprise-screen" id="surprise-screen">
+        <h2>Surprise! More roses are on the way! 🥰</h2>
+        <p>You're the best, and I can't wait to see you. Happy Rose Day!</p>
+        <button class="button" onclick="goToNextScreen()">Go to Next Screen</button>
+    </div>
+
+    <div class="next-screen" id="next-screen">
+        <p>You're amazing, and I'll always be here for you. Here's to many more Rose Days together!</p>
+    </div>
+
+    <script>
+        function showSurprise() {
+            document.getElementById('surprise').style.display = 'block';
+            setTimeout(function() {
+                document.getElementById('surprise-screen').style.display = 'block';
+            }, 2000);
+        }
+
+        function goToNextScreen() {
+            document.getElementById('next-screen').style.display = 'block';
+            document.getElementById('surprise-screen').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
